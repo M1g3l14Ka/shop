@@ -2,8 +2,15 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { HederLink } from "@/types/types"
 
-export default function Header() {
+interface IHeaderp {
+    links: HederLink[];
+}
+
+export default function Header({ links }:IHeaderp) {
+
+
 
     return (
         //animations styles
@@ -20,50 +27,18 @@ export default function Header() {
 
                     <div className="flex items-center gap-10 sm:text-lg md:text-xl lg:text-2xl font-bold font-mono ">
 
-                        <Link href="/">
-                            <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
-                                Home
-                                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/>
-                            </span>
-                        </Link>
-
-                        <Link href="/service/contacts">
-                            <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
-                                Contact 
-                                {/* White underline */}
-                                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/>
-                            </span>
-                        </Link>    
-                        
-                        <Link href="/service/policy">
-                            <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
-                                Policy
-                                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/> 
-                            </span>
-                        </Link> 
-
-                        <Link href="/user/order">
-                            <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
-                                Orders
-                                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/>    
-                            </span>
-
-                        </Link>
-
-                        <Link href="/user/favorites">
-                            <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
-                                Favorites
-                                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/>    
-                            </span>
-                        </Link>
-
-                        <Link href="/user/cart">
-                            <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
-                                Cart
-                                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/>    
-                            </span>
-                        
-                        </Link>
+                        {
+                            links.map((item) => (
+                                <div key={item.id}>
+                                    <Link href={item.href}>
+                                        <span className="group relative inline-block cursor-pointer hover:text-white transition-colors duration-300 pb-1">
+                                            {item.name}
+                                            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white -translate-x-1/2 transition-all duration-700 ease-out group-hover:w-full"/>
+                                        </span>
+                                    </Link>
+                                </div>
+                            ))
+                        }
                     
                     </div>
                 
