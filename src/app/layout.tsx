@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
-import { headerLinks } from "@/data/data";
+import { headerServiceLinks, headerUserLinks } from "@/data/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#050505]">
       
-        <Header links={headerLinks}/>
+        <Header serviceLinks={headerServiceLinks} userLinks={headerUserLinks}/>
         {children}
         
       </body>
