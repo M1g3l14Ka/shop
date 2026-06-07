@@ -30,7 +30,7 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
             {/* Основной контейнер */}
             <div className="max-w-7xl mx-auto flex justify-between items-center py-1">
                 
-                {/* 1. ЛЕВАЯ КОЛОНКА (Логотип) — Занимает строго 25% ширины */}
+                {/* Логотип - занимает строго 25% ширины */}
                 <div className="w-1/4 flex justify-start">
                     <Link href="/" className="text-xl flex flex-col">
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-[#ffffff] to-[#3d3d3d]">
@@ -42,8 +42,7 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                     </Link>
                 </div>
 
-                {/* 2. ЦЕНТРАЛЬНАЯ КОЛОНКА (Сервисные ссылки) — Занимает строго 50% ширины */}
-                {/* Скрываем на экранах меньше XL (hidden xl:flex) */}
+                {/* Сервисные ссылки - занимает  50% ширины */}
                 <div className="hidden xl:flex w-2/4 justify-center gap-10">
                     {
                         serviceLinks.map((item) => (
@@ -59,8 +58,7 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                     }
                 </div>
 
-                {/* 3. ПРАВАЯ КОЛОНКА (Ссылки пользователя) — Занимает строго 25% ширины */}
-                {/* Скрываем на экранах меньше XL (hidden xl:flex) */}
+                {/* Ссылки пользователя - занимает строго 25% ширины */}
                 <div className="hidden xl:flex w-1/4 justify-end gap-6 font-mono font-bold">
                     {
                         userLinks.map((item) => (
@@ -76,7 +74,7 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                     }
                 </div>
 
-                {/* 4. МОБИЛЬНЫЙ БУРГЕР (Показываем на всех экранах меньше XL: xl:hidden) */}
+                {/*  МОБИЛЬНЫЙ БУРГЕР (Показываем на всех экранах меньше XL: xl:hidden) */}
                 <div className="xl:hidden flex items-center">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -105,7 +103,7 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                             }
                         </div>
                         
-                        {/* РАЗДЕЛ 2: КЛИЕНТСКИЕ ССЫЛКИ (Отделены тонкой линией) */}
+                        {/* РАЗДЕЛ 2: КЛИЕНТСКИЕ ССЫЛКИ  */}
                         <div className="flex flex-col gap-4 mt-4 border-t pt-6">
                             <span className="text-gray-500 text-lg text-center tracking-widest font-mono mb-2 border-b border-gray-500/40">КЛИЕНТСКАЯ ЗОНА</span>
                             {
