@@ -8,7 +8,7 @@ export default function Hero() {
 return (
     <div className="relative w-full h-[95vh] flex items-center justify-center overflow-hidden">
         
-        {/* Видео фон (я вернул тебе loop, чтобы оно не останавливалось!) */}
+        {/* Видео фон */}
         <video
             autoPlay
             muted
@@ -21,14 +21,13 @@ return (
         {/* Затемнение всего видео, чтобы карточка выделялась */}
         <div className="absolute inset-0 bg-black/40 z-10" />
 
-        {/* ТА САМАЯ ПРЕМИУМ-КАРТОЧКА (Glassmorphism) */}
+        {/* Glassmorphism */}
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="relative z-50 flex justify-center items-center flex-col gap-8 p-10 max-w-4xl w-full mx-4 bg-black/30 backdrop-blur-md border border-white/10 rounded-3xl shadow-2xl"
         >
-            {/* ИСПРАВЛЕННАЯ ПРУЖИНКА */}
             <motion.div 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
