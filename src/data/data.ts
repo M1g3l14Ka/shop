@@ -1,10 +1,15 @@
-import { HederLink } from "@/types/types"
+import { HeaderLink } from "@/types/types"
 
-export const headerLinks:HederLink[] = [
-    { id: 1, name: "Home", href: "/" },
-    { id: 2, name: "Contacts", href: "/service/contacts" },
-    { id: 3, name: "Policy", href: "/service/policy" },
-    { id: 4, name: "Favorites", href: "/user/favorites" },
-    { id: 5, name: "Orders", href: "/user/order" },
-    { id: 6, name: "Cart", href: "/user/cart" },
+export const headerServiceLinks:HeaderLink[] = [
+    { id: 1, name: "Домой", href: "/" },
+    { id: 2, name: "О нас", href: "/service/about" },
+    { id: 3, name: "Контакты", href: "/service/contacts" },
+]
+
+
+export const headerUserLinks:HeaderLink[] = [
+    { id: 1, name: "Избранное", href: "/user/favorites" },
+    { id: 2, name: "Заказы", href: "/user/order" },
+    { id: 3, name: "Корзина", href: "/user/cart" },
+    { id: 4, name: "Профиль", href: "/user/profile" },
 ]
