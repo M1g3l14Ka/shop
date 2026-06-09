@@ -25,12 +25,10 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="w-full bg-[#0a0a0a]/50 text-gray-400 text-lg  top-0 z-50 backdrop-blur-lg border-b border-white/10 px-6 font-mono font-bold sticky"
+            className="w-full bg-[#0a0a0a]/50 text-gray-400 text-lg  top-0 z-100 backdrop-blur-lg border-b border-white/10 px-6 font-mono font-bold sticky"
         >
-            {/* Основной контейнер */}
             <div className="max-w-7xl mx-auto flex justify-between items-center py-1">
                 
-                {/* Логотип - занимает строго 25% ширины */}
                 <div className="w-1/4 flex justify-start">
                     <Link href="/" className="text-xl flex flex-col">
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-[#ffffff] to-[#3d3d3d]">
@@ -42,7 +40,6 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                     </Link>
                 </div>
 
-                {/* Сервисные ссылки - занимает  50% ширины */}
                 <div className="hidden xl:flex w-2/4 justify-center gap-10">
                     {
                         serviceLinks.map((item) => (
@@ -58,7 +55,6 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                     }
                 </div>
 
-                {/* Ссылки пользователя - занимает строго 25% ширины */}
                 <div className="hidden xl:flex w-1/4 justify-end gap-6 font-mono font-bold">
                     {
                         userLinks.map((item) => (
@@ -74,7 +70,6 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                     }
                 </div>
 
-                {/*  МОБИЛЬНЫЙ БУРГЕР (Показываем на всех экранах меньше XL: xl:hidden) */}
                 <div className="xl:hidden flex items-center">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -86,7 +81,6 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                         <SheetDescription className="sr-only">Навигация по сайту</SheetDescription>
                         <SheetTitle className="text-center w-full text-4xl font-mono font-bold text-transparent bg-clip-text bg-linear-to-r from-[#3d3d3d] to-[#ffffff] border-b border-white/10 pb-4">Меню</SheetTitle>
 
-                        {/* РАЗДЕЛ 1: СЕРВИСНЫЕ ССЫЛКИ */}
                         <div className="flex flex-col gap-4">
                             <span className="text-gray-500 text-lg text-center tracking-widest font-mono mb-2 border-b border-gray-500/40">НАВИГАЦИЯ ПО САЙТУ</span>
                             {
@@ -103,7 +97,6 @@ export default function Header({ serviceLinks, userLinks }:IHeaderp) {
                             }
                         </div>
                         
-                        {/* РАЗДЕЛ 2: КЛИЕНТСКИЕ ССЫЛКИ  */}
                         <div className="flex flex-col gap-4 mt-4 border-t pt-6">
                             <span className="text-gray-500 text-lg text-center tracking-widest font-mono mb-2 border-b border-gray-500/40">КЛИЕНТСКАЯ ЗОНА</span>
                             {

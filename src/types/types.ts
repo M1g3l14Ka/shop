@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 
 
 export interface HeaderLink {
@@ -16,16 +17,41 @@ export interface DummyJsonProducts {
     discountPercentage: number;
     rating: number;
     stock: number;
-    tags: [
-        string
-    ];
+    tags: string[];
     brand: string;
-    reviews: [
+    reviews: {
         rating: number,
         comment: string,
-        data: Date,
+        data: string,
         reviewerName: string,        
         reviewerEmail: string
-    ];
+    }[];
     returnPolicy: string;
 };
+
+export interface FeaturesTables {
+    id: number;
+    title: string;
+    description: string;
+    ico: LucideIcon;
+}
+
+export interface ISocial {
+  id: number;
+  name: string;
+  url: string;
+  icon: string;
+}
+
+export interface IContactForm {
+    name: string;
+    phone: string;
+    email: string;
+    message: string;
+}
+
+export interface ISendEmailResult {
+  success: boolean;
+  error?: string;
+  details?: string;
+}

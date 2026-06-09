@@ -1,10 +1,10 @@
 
+export async function getProducts() {
 
-export async function Product() {
-
+    const API_URL = process.env.PRODCUT_FETCH_URL;
 
     try {
-        const res = await fetch(`https://dummyjson.com/products?limit=30`)
+        const res = await fetch(API_URL!)
 
         if(!res.ok) {
             throw new Error('Faild to fetch products!')
